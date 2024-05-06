@@ -1,0 +1,104 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.list {
+  .row {
+    position: relative;
+    display: flex;
+    gap: rem(20);
+    padding: rem(30) rem(30);
+    overflow: hidden;
+
+    @media (max-width: $tablet) {
+      padding: rem(20) rem(15);
+      flex-direction: column;
+      gap: rem(6);
+      border-top: rem(1) solid cl(line-white);
+    }
+
+    p {
+      transition: all $time $tr;
+    }
+
+    &:not(:first-child) {
+      border-top: rem(1) solid cl(line-white);
+    }
+
+    &:not(.head) {
+      cursor: pointer;
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        transform: translate(0, -101%);
+        pointer-events: none;
+        user-select: none;
+        background-color: cl(main-black);
+        transition: all $time $tr;
+
+        @media (max-width: $tablet) {
+          display: none;
+        }
+      }
+    }
+
+    &:hover:not(.head) {
+      &::before {
+        transform: translate(0);
+      }
+
+      p {
+        color: cl(main-white);
+        @media (max-width: $tablet) {
+          color: cl(text-secondary);
+        }
+      }
+
+      .row__arrow {
+        transform: translate(0, -50%);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &.head {
+      padding: 0 rem(30) rem(18);
+      overflow: hidden;
+      @media (max-width: $tablet) {
+        padding: 0 rem(15) rem(18);
+        display: none;
+      }
+    }
+
+    &__arrow {
+      position: absolute;
+      right: rem(30);
+      top: 50%;
+      transform: translate(-100%, -50%);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      user-select: none;
+      transition: all $time $tr;
+
+      @media (max-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+  .col {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 100%;
+
+    @media (max-width: $tablet) {
+      flex: 1 1 100% !important;
+    }
+  }
+  .heading {
+  }
+  .item {
+  }
+}

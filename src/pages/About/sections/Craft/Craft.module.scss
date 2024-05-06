@@ -1,0 +1,14 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.craft {
+  margin: rem(200) 0;
+
+  @media (max-width: $tablet) {
+    margin: rem(60) 0 rem(100);
+  }
+
+  &Body {
+  }
+}

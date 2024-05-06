@@ -1,0 +1,81 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.header {
+  display: flex;
+  border-bottom: rem(1) solid cl(line-white);
+
+  @media (max-width: $tablet) {
+    flex-direction: column;
+  }
+
+  &Col {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 50%;
+    padding: rem(100) rem(30) rem(30);
+
+    @media (max-width: $tablet) {
+      padding: rem(60) rem(15) rem(32);
+    }
+
+    &:first-child {
+      border-right: rem(1) solid cl(line-white);
+    }
+    &:not(:first-child) {
+      padding: rem(100) 0 0;
+
+      @media (max-width: $tablet) {
+        padding: rem(60) 0 0;
+        border-top: rem(1) solid cl(line-white);
+        border-left: none;
+      }
+    }
+
+    &__title {
+      padding: 0 rem(30) rem(40);
+
+      @media (max-width: $tablet) {
+        padding: 0 rem(15) rem(24);
+      }
+    }
+    &__row {
+      display: flex;
+      flex-direction: column;
+      gap: rem(20);
+      padding: rem(30);
+      border-top: rem(1) solid cl(line-white);
+
+      @media (max-width: $tablet) {
+        gap: rem(16);
+        padding: rem(24) rem(15);
+      }
+
+      &Title {
+        font-size: rem(28) !important;
+        @media (max-width: $tablet) {
+          font-size: rem(24) !important;
+        }
+      }
+      &Text {
+        font-size: rem(18);
+        @media (max-width: $tablet) {
+          font-size: rem(14);
+        }
+      }
+    }
+  }
+  &__title {
+  }
+  &__client {
+    display: flex;
+    flex-direction: column;
+    gap: rem(6);
+    margin: auto 0 0;
+
+    @media (max-width: $tablet) {
+      margin: rem(24) 0 0;
+    }
+  }
+}

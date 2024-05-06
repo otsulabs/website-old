@@ -1,0 +1,101 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.button {
+  padding: rem(18) rem(20);
+  border-radius: rem(8);
+  background: cl(main-black);
+
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  color: cl(main-white);
+
+  transition: all $time $tr;
+
+  &:hover {
+    // background: #3f3e3e;
+
+    .circle {
+      // width: 500%;
+      // height: 500%;
+      width: rem(50);
+      height: rem(50);
+      transform: translate(-50%, -50%) scale(5);
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    padding: rem(12.5) rem(16);
+    border-radius: rem(5);
+
+    font-size: rem(12);
+  }
+
+  span {
+    position: relative;
+  }
+
+  &.light {
+    border: rem(1) solid cl(main-black);
+    background: transparent;
+    color: cl(main-black);
+
+    &:hover {
+      // background: cl(main-black);
+      color: cl(main-white);
+    }
+  }
+
+  &.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: rem(52);
+    height: rem(52);
+
+    border: rem(1) solid cl(main-black);
+    background: transparent;
+
+    svg {
+      width: rem(24);
+      height: rem(24);
+      path {
+        transition: all $time $tr;
+      }
+    }
+
+    &:hover {
+      // background: cl(main-black);
+
+      svg {
+        path {
+          fill: cl(main-white);
+        }
+      }
+    }
+  }
+}
+
+.circle {
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+  line-height: 0;
+  border-radius: 50%;
+  background: #3f3e3e;
+  position: absolute;
+  transition: all 0.5s ease-Out;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,28 @@
+// ===============
+// colors palette
+// ===============
+
+$colors: (
+  'main-white': #fff,
+  'main-black': #181717,
+  'text-secondary': #6a6a6a,
+  'text-footer-title': #525252,
+  'text-secondary-black': #7f8182,
+  'line-black': #252525,
+  'line-white': #c8c8c8,
+  'input-border': #bdbdbd,
+  'grn': #2ba829,
+);
+
+//========================================================================================================================================================
+
+:root {
+  @if $colors {
+    @each $key, $value in $colors {
+      --color-#{$key}: #{$value};
+      --color-#{$key}--rgb: #{hextorgb($value)};
+    }
+  }
+
+  --font-primary: #{$fontFamily};
+}

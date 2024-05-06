@@ -1,0 +1,42 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: rem(30);
+
+  @media (max-width: $tablet) {
+    gap: rem(15);
+  }
+
+  &__row {
+    display: flex;
+    gap: rem(30);
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      gap: rem(15);
+    }
+  }
+
+  &__file {
+    margin: rem(-1) 0 rem(9);
+
+    @media (max-width: $tablet) {
+      margin: rem(9) 0;
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    width: auto;
+    align-self: flex-start;
+
+    @media (max-width: $tablet) {
+      padding: rem(16) rem(32);
+      font-size: rem(14);
+    }
+  }
+}

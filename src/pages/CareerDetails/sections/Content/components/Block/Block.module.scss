@@ -1,0 +1,81 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.block {
+  display: flex;
+  // padding: 0 rem(30);
+
+  @media (max-width: $tablet) {
+    padding: rem(40) rem(15);
+    flex-direction: column;
+    &:first-child {
+      padding: 0;
+
+      .col {
+        &:nth-child(2) {
+          padding: rem(40) rem(15) rem(16) !important;
+        }
+        &:nth-child(3) {
+          padding: rem(0) rem(15) rem(40) !important;
+        }
+      }
+    }
+    &:not(:first-child) {
+      border-top: rem(1) solid cl(line-white);
+
+      .col {
+        &:not(:first-child) {
+          @media (max-width: $tablet) {
+            margin: rem(16) 0 0;
+          }
+        }
+      }
+    }
+  }
+
+  &:first-child {
+    border-top: rem(1) solid cl(line-white);
+  }
+  &:last-child {
+    border-bottom: rem(1) solid cl(line-white);
+  }
+  &:not(:first-child) {
+    .col {
+      border-top: rem(1) solid cl(line-white);
+    }
+  }
+
+  .col {
+    padding: rem(40) 0;
+    min-height: 100%;
+
+    @media (max-width: $tablet) {
+      flex: 1 1 auto !important;
+      min-height: auto;
+      padding: 0 !important;
+      border: none !important;
+    }
+
+    &:nth-child(1) {
+      flex: 0 0 rem(473);
+      padding: rem(50) 0 rem(40) rem(30);
+      @media (max-width: $tablet) {
+        padding: 0;
+        flex: 0 0 auto;
+      }
+    }
+    &:nth-child(2) {
+      flex: 0 0 rem(945);
+      padding: rem(40) rem(30);
+      border-right: rem(1) solid cl(line-white);
+      @media (max-width: $tablet) {
+        flex: 0 0 auto;
+      }
+    }
+    &:nth-child(3) {
+      flex: 1 1 auto;
+      padding: 0;
+    }
+  }
+}

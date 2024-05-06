@@ -1,0 +1,90 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.base {
+  display: flex;
+  flex-direction: column;
+  gap: rem(80);
+
+  @media (max-width: $tablet) {
+    gap: rem(64);
+  }
+
+  .row {
+    display: flex;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      gap: rem(16);
+    }
+
+    &:not(:first-child) {
+      position: relative;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        top: rem(-40);
+        width: 100vw;
+        height: rem(1);
+        background-color: cl(line-white);
+
+        @media (max-width: $tablet) {
+          top: rem(-32);
+        }
+      }
+    }
+  }
+  .col {
+    flex: 1 1 100%;
+
+    @media (max-width: $tablet) {
+      flex: 0 0 auto;
+    }
+
+    &:nth-child(1) {
+      flex: 0 0 rem(473);
+      padding: rem(10) 0 0;
+      @media (max-width: $tablet) {
+        padding: 0;
+        flex: 0 0 auto;
+      }
+    }
+
+    &.text {
+      display: flex;
+      gap: rem(90);
+      flex: 0 0 rem(845);
+
+      @media (max-width: $tablet) {
+        flex-direction: column;
+        flex: 0 0 auto;
+        gap: rem(16);
+      }
+    }
+    .text {
+      &__col {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        gap: rem(20);
+
+        @media (max-width: $tablet) {
+          gap: rem(16);
+        }
+
+        &:nth-child(1) {
+          flex: 0 0 rem(382);
+
+          @media (max-width: $tablet) {
+            flex: 0 0 auto;
+          }
+        }
+      }
+    }
+  }
+}

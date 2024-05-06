@@ -1,0 +1,11 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.list {
+  margin: rem(60) 0 0;
+
+  &__content {
+    border-bottom: rem(1) solid cl(line-white);
+  }
+}

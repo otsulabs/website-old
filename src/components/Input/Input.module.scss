@@ -1,0 +1,51 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.input {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border: rem(1) solid cl(input-border);
+  border-radius: rem(8);
+  background: cl(main-white);
+  padding: rem(17) rem(16);
+
+  font-weight: 400;
+  font-size: rem(18);
+  line-height: 140%;
+  color: cl(main-black);
+
+  transition: all $time $tr;
+
+  &::placeholder {
+    color: cl(text-secondary);
+  }
+  &:focus {
+    border: rem(1) solid cl(line-black);
+  }
+
+  @media (max-width: $tablet) {
+    padding: rem(16);
+    font-size: rem(14);
+  }
+
+  &.textarea {
+    min-height: rem(160);
+    resize: none;
+  }
+}
+
+.label {
+  width: 100%;
+  display: flex;
+  gap: rem(6);
+  flex-direction: column;
+
+  .error {
+    font-weight: 400;
+    font-size: rem(14);
+    line-height: 140%;
+    color: #df1e1e;
+  }
+}

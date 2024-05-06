@@ -1,0 +1,61 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.credits {
+  display: flex;
+  border-bottom: rem(1) solid cl(line-white);
+
+  &:not(.noBorder) {
+    border-top: rem(1) solid cl(line-white);
+  }
+
+  @media (max-width: $tablet) {
+    flex-wrap: wrap;
+    padding: rem(60) rem(15) 0;
+    border-bottom: 0;
+    gap: rem(30);
+  }
+
+  .col {
+    flex: 0 0 50%;
+    padding: rem(60) rem(30);
+    @media (max-width: $tablet) {
+      flex: 0 0 100%;
+      padding: 0;
+    }
+
+    &:not(:first-child) {
+      border-left: rem(1) solid cl(line-white);
+      @media (max-width: $tablet) {
+        border-left: none;
+      }
+    }
+  }
+
+  &Info {
+    display: flex;
+
+    @media (max-width: $tablet) {
+      flex-wrap: wrap;
+      gap: rem(30);
+    }
+
+    &__col {
+      display: flex;
+      flex-direction: column;
+      gap: rem(30);
+      flex: 0 0 50%;
+
+      @media (max-width: $tablet) {
+        flex: 1 1 100%;
+      }
+    }
+
+    &__row {
+      display: flex;
+      flex-direction: column;
+      gap: rem(5);
+    }
+  }
+}

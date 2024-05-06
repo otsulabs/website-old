@@ -1,0 +1,47 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.faq {
+  &Item {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+    padding: rem(30);
+
+    @media (max-width: $tablet) {
+      padding: rem(24) rem(15);
+    }
+
+    &:not(:first-child) {
+      border-top: rem(1) solid cl(line-white);
+    }
+
+    &__title {
+    }
+    &__text {
+      font-size: rem(18);
+
+      @media (max-width: $tablet) {
+        font-size: rem(14);
+      }
+
+      a {
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: cl(main-black);
+        font-size: rem(18);
+
+        @media (max-width: $tablet) {
+          font-size: rem(14);
+        }
+
+        transition: all $time $tr;
+        &:hover {
+          // color: cl(text-secondary);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

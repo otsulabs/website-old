@@ -1,0 +1,14 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.main {
+  margin: rem(100) 0;
+
+  @media (max-width: $tablet) {
+    margin: rem(60) 0;
+  }
+
+  &Body {
+  }
+}

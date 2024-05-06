@@ -1,0 +1,41 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.card {
+  padding: rem(20);
+  border: rem(1) solid cl(line-white);
+
+  @media (max-width: $tablet) {
+    padding: rem(15);
+  }
+
+  &__video {
+    width: 100%;
+    height: rem(330);
+
+    @media (max-width: $tablet) {
+      height: rem(168);
+    }
+
+    img,
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+  }
+  &Info {
+    margin: rem(12) 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: rem(6);
+
+    &__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

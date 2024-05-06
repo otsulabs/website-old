@@ -1,0 +1,64 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.title {
+  font-weight: 500;
+  text-transform: uppercase;
+  color: cl(main-black);
+  line-height: 120%;
+  letter-spacing: -0.04em;
+
+  &.h1 {
+    font-weight: 400;
+    font-size: rem(195);
+    line-height: 77%;
+    letter-spacing: -0.12em;
+
+    @media (max-width: $tablet) {
+      font-size: rem(81);
+    }
+  }
+
+  &.h2 {
+    font-size: rem(64);
+
+    @media (max-width: $tablet) {
+      font-size: rem(28);
+    }
+  }
+
+  &.h3 {
+    font-size: rem(48);
+
+    @media (max-width: $tablet) {
+      font-size: rem(28);
+    }
+  }
+  &.h4 {
+    font-size: rem(32);
+
+    @media (max-width: $tablet) {
+      font-size: rem(24);
+    }
+  }
+
+  &.value {
+    font-weight: 500;
+    font-size: rem(70);
+    line-height: normal;
+    letter-spacing: -0.04em;
+
+    @media (max-width: $tablet) {
+      font-size: rem(44);
+    }
+  }
+
+  &.lowerCase {
+    text-transform: unset;
+  }
+}
+
+.row {
+  overflow: hidden;
+}

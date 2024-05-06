@@ -1,0 +1,33 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.content {
+  &Top {
+    border-bottom: rem(1) solid cl(line-white);
+    padding: rem(100) 0 rem(40);
+    @media (max-width: $tablet) {
+      padding: rem(60) rem(15) rem(32);
+    }
+  }
+  &Body {
+    margin: rem(40) 0 rem(200) rem(473);
+    width: rem(915);
+
+    @media (max-width: $tablet) {
+      width: 100%;
+      margin: 0;
+      padding: rem(32) rem(15) rem(100);
+    }
+
+    p {
+      font-size: rem(18);
+      @media (max-width: $tablet) {
+        font-size: rem(14);
+      }
+      &:not(:first-child) {
+        margin: rem(20) 0 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.text {
+  font-weight: 400;
+  font-size: rem(18);
+  line-height: 140%;
+  color: cl(main-black);
+  letter-spacing: normal;
+
+  @media (max-width: $tablet) {
+    font-size: rem(14);
+  }
+
+  &.secondary {
+    color: cl(text-secondary);
+  }
+  &.upperCase {
+    text-transform: uppercase;
+  }
+  &.bold {
+    font-weight: 500;
+  }
+  &.lg {
+    font-size: rem(20);
+
+    @media (max-width: $tablet) {
+      font-size: rem(18);
+    }
+  }
+  &.sm {
+    font-size: rem(16);
+  }
+}

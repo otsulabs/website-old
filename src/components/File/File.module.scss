@@ -1,0 +1,113 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.file {
+  align-self: flex-start;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+
+  label {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  input {
+    position: absolute;
+    inset: 0;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &__remove {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    // background-color: red;
+  }
+
+  &Body {
+    display: flex;
+    gap: rem(16);
+    align-items: center;
+
+    @media (max-width: $tablet) {
+      gap: rem(12);
+    }
+
+    &__icon {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+
+      flex: 0 0 auto;
+      width: rem(48);
+      height: rem(48);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: rem(1) solid cl(main-black);
+      border-radius: rem(8);
+
+      transition: all $time $tr;
+
+      svg {
+        position: relative;
+        z-index: 1;
+        width: rem(24);
+        height: rem(24);
+
+        path {
+          stroke: cl(main-black);
+          transition: all $time $tr;
+        }
+      }
+    }
+
+    &__title {
+      font-size: rem(18);
+      text-transform: capitalize;
+      transition: all $time $tr;
+
+      @media (max-width: $tablet) {
+        font-size: rem(14);
+      }
+    }
+
+    &:hover {
+      .circle {
+        width: rem(50);
+        height: rem(50);
+        transform: translate(-50%, -50%) scale(5);
+        opacity: 1;
+      }
+      .fileBody__title {
+        color: cl(text-secondary);
+      }
+      .fileBody__icon {
+        svg {
+          path {
+            stroke: cl(main-white);
+          }
+        }
+      }
+    }
+  }
+}
+.circle {
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+  line-height: 0;
+  border-radius: 50%;
+  background: #3f3e3e;
+  position: absolute;
+  transition: all 0.5s ease-Out;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

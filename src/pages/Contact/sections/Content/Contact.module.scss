@@ -1,0 +1,63 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.content {
+  margin: 0 0 rem(200);
+  border-bottom: rem(1) solid cl(line-white);
+
+  @media (max-width: $tablet) {
+    margin: rem(60) 0 rem(100);
+  }
+
+  &Top {
+    display: flex;
+    border-bottom: rem(1) solid cl(line-white);
+
+    .col {
+      padding: rem(100) rem(30) rem(40);
+      @media (max-width: $tablet) {
+        padding: rem(0) rem(15) rem(32);
+        border: none;
+      }
+    }
+  }
+
+  &Body {
+    display: flex;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+
+      .title {
+        padding: rem(68) rem(15) rem(32);
+      }
+    }
+  }
+}
+
+.col {
+  padding: rem(30);
+  flex: 0 0 50%;
+
+  @media (max-width: $tablet) {
+    flex: 1 1 auto;
+    padding: rem(32) rem(15);
+    border-top: rem(1) solid cl(line-white);
+
+    &:first-child {
+      border: none;
+    }
+  }
+
+  &:not(:first-child) {
+    border-left: rem(1) solid cl(line-white);
+
+    @media (max-width: $tablet) {
+      border-left: none;
+    }
+  }
+  &.nospace {
+    padding: 0;
+  }
+}

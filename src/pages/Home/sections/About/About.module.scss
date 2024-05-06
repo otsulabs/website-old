@@ -1,0 +1,152 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.about {
+  margin: rem(300) 0 0;
+
+  @media (max-width: $tablet) {
+    margin: rem(100) 0 0;
+  }
+
+  &Top {
+    &__row {
+      display: flex;
+      gap: rem(405);
+
+      @media (max-width: $tablet) {
+        flex-direction: column;
+        gap: rem(0);
+      }
+
+      &Title {
+        margin: rem(11) 0 0;
+
+        @media (max-width: $tablet) {
+          margin: rem(16) 0 0;
+        }
+      }
+    }
+  }
+
+  &Body {
+    margin: rem(60) 0 0;
+    display: flex;
+    border-top: rem(1) solid cl(line-white);
+
+    @media (max-width: $tablet) {
+      margin: rem(40) 0 0;
+      flex-direction: column;
+      border: none;
+    }
+
+    &__title {
+      margin: rem(16) 0 0;
+      text-transform: uppercase;
+
+      @media (max-width: $tablet) {
+        margin: 0;
+        padding: 0 rem(15) rem(24);
+      }
+    }
+
+    .cat {
+      padding: 0 rem(16) 0 rem(26);
+
+      @media (max-width: $tablet) {
+        padding: rem(24) rem(80) rem(34) rem(40);
+      }
+
+      img,
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      video {
+        transform: scale(1.2) translate(rem(-20), 0);
+      }
+    }
+  }
+}
+
+.col {
+  flex: 1 1 rem(474);
+  padding: rem(62) rem(30) rem(200);
+
+  @media (max-width: $tablet) {
+    flex: 0 0 auto;
+    padding: 0;
+
+    &:last-child {
+      border-top: rem(1) solid cl(line-white);
+    }
+  }
+
+  &:not(:first-child) {
+    border-left: rem(1) solid cl(line-white);
+  }
+
+  &:last-child {
+    flex: 1 1 rem(500);
+
+    @media (max-width: $tablet) {
+      flex: 0 0 auto;
+    }
+  }
+
+  &.row {
+    &:not(:first-child) {
+      margin: rem(102) 0 0;
+    }
+  }
+
+  .row {
+    @media (max-width: $tablet) {
+      position: relative;
+      padding: rem(24) rem(15);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: rem(0);
+        left: rem(0);
+        right: rem(0);
+        height: rem(1);
+        background-color: cl(line-white);
+      }
+    }
+
+    &:not(:first-child) {
+      margin: rem(102) 0 0;
+      @media (max-width: $tablet) {
+        margin: 0;
+      }
+    }
+
+    &__label {
+      margin: rem(3) 0 0;
+
+      font-weight: 600;
+      font-size: rem(16);
+      line-height: 130%;
+      text-transform: uppercase;
+      color: cl(main-black);
+
+      @media (max-width: $tablet) {
+        margin: 0;
+        font-size: rem(14);
+      }
+    }
+
+    &__text {
+      margin: rem(24) 0 0;
+      max-width: rem(343);
+
+      @media (max-width: $tablet) {
+        margin: rem(16) 0 0;
+        max-width: 100%;
+      }
+    }
+  }
+}
