@@ -120,23 +120,18 @@ const ContentSection = () => {
           </Title.H4>
           <Text lg className={style.list}>
             <ul>
-              <li>Competitive salary</li>
+              <li>Competitive compensation.</li>
               <li>
-                Proficiency in animation software such as ClipStudio Paint Ex
-                and Toon Boon.
+                Beautiful working space located in the heart of the city, that
+                includes free facilities, such as gym, swimming pool, library,
+                and more.
               </li>
               <li>
                 An environment that fosters creativity and personal growth.
               </li>
-              <li>
-                Beautiful working space located in the heart of the city, that
-                includes free facilities, like gym, swimming pool, library, and
-                more (for applicants in Ho Chi Minh).
-              </li>
-              <li>
-                Biannual salary reviews. Company-provided work equipment. Paid
-                holidays.
-              </li>
+              <li>Company-provided work equipment.</li>
+              <li>Paid holidays.</li>
+              <li>Biannual salary reviews.</li>
             </ul>
           </Text>
         </Block.Col>
