@@ -1,8 +1,9 @@
 import Text from '../../../../components/Text';
 import Title from '../../../../components/Title';
 import style from './Freelance.module.scss';
-import imgMin from './assets/img/min.jpg';
-import imgBig from './assets/img/big.jpg';
+import img from './assets/img/img.png';
+// import imgMin from './assets/img/min.jpg';
+// import imgBig from './assets/img/big.jpg';
 import { useMediaQuery } from 'usehooks-ts';
 import LinkButton from '../../../../components/LinkButton';
 
@@ -32,13 +33,13 @@ const FreelanceSection = () => {
               )}
             </Title.H3>
 
-            {isTablet && (
+            {/* {isTablet && (
               <div className={style.freelanceImages}>
                 <div className={`${style.freelanceImages__img} ${style.big}`}>
                   <img src={imgBig} alt='' />
                 </div>
               </div>
-            )}
+            )} */}
 
             <div className={style.freelanceContent__bottom}>
               <Text
@@ -66,16 +67,19 @@ const FreelanceSection = () => {
               {/* </a> */}
             </div>
           </div>
-          {!isTablet && (
-            <div className={style.freelanceImages}>
+          {/* <div className={style.freelanceImages}>
               <div className={`${style.freelanceImages__img} ${style.min}`}>
                 <img src={imgMin} alt='' />
               </div>
               <div className={`${style.freelanceImages__img} ${style.big}`}>
                 <img src={imgBig} alt='' />
               </div>
-            </div>
-          )}
+            </div> */}
+          {/* {!isTablet && ( */}
+          <div className={style.freelanceImage}>
+            <img src={img} alt='' />
+          </div>
+          {/* )} */}
         </div>
       </div>
     </section>

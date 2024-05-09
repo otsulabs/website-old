@@ -1,0 +1,11 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.content {
+  margin: 0 0 rem(200);
+
+  @media (max-width: $tablet) {
+    margin: 0 0 rem(100);
+  }
+}

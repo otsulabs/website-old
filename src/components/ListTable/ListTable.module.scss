@@ -7,7 +7,7 @@
     position: relative;
     display: flex;
     gap: rem(20);
-    padding: rem(30) rem(30);
+    padding: rem(30) rem(100) rem(30) rem(30);
     overflow: hidden;
 
     @media (max-width: $tablet) {

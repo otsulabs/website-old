@@ -1,0 +1,207 @@
+@use 'sass:math';
+@import '/src/scss/mixins';
+@import '/src/scss/style.scss';
+
+.gallery {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: rem(1) solid cl(line-white);
+  padding: 0 rem(30);
+
+  @media (max-width: $tablet) {
+    padding: 0;
+  }
+
+  .slider {
+    @media (max-width: $tablet) {
+      width: 100%;
+      padding: 0 rem(15) rem(16);
+
+      .slide {
+        @media (max-width: $tablet) {
+          width: rem(228);
+
+          .item {
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    &__scrollbar {
+      display: block;
+      // width: calc(100% - rem(30));
+      width: calc(100%);
+      height: rem(6);
+      margin: rem(10) auto 0;
+      // margin: 0 auto 0;
+      background: #e3e3e3;
+
+      & > div {
+        height: rem(6);
+        background: cl(main-black);
+        border-radius: 0;
+      }
+    }
+  }
+
+  &.withSpace {
+    margin: rem(60) 0 0;
+    border-top: rem(1) solid cl(line-white);
+
+    @media (max-width: $tablet) {
+      margin: rem(32) 0 0;
+    }
+  }
+
+  &.horizontal {
+    @media (max-width: $tablet) {
+      .item.horizontal {
+        flex: 1 1 100%;
+        padding: rem(15);
+        &:nth-child(2) {
+          border-top: rem(1) solid cl(line-white);
+        }
+        &:nth-child(odd) {
+          border-right: none;
+        }
+      }
+    }
+
+    &.big {
+      .item {
+        flex: 1 1 100%;
+
+        &:nth-child(2) {
+          border-top: rem(1) solid cl(line-white);
+        }
+      }
+    }
+  }
+
+  &:not(.horizontal) {
+    @media (max-width: $tablet) {
+      padding: rem(15) 0 rem(32);
+    }
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: rem(1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: cl(line-white);
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+
+  &::before {
+    left: rem(30);
+    @media (max-width: $tablet) {
+      left: rem(15);
+    }
+  }
+  &::after {
+    right: rem(30);
+    @media (max-width: $tablet) {
+      right: rem(15);
+    }
+  }
+
+  .item {
+    padding: rem(20);
+    border-top: rem(1) solid cl(line-white);
+    border-right: rem(1) solid cl(line-white);
+
+    &:not(.horizontal) {
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    .img {
+      position: relative;
+      padding: 0 0 57.5%;
+      height: 0;
+
+      img,
+      video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .overlay {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+        inset: 0;
+        background-color: cl(main-black, 0.4);
+
+        button {
+          width: rem(80);
+          height: rem(80);
+
+          transition: all $time $tr;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+
+          @media (max-width: $tablet) {
+            width: rem(44);
+            height: rem(44);
+          }
+
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    &.horizontal {
+      flex: 0 0 50%;
+
+      border-right: none;
+      &:nth-child(odd) {
+        border-right: rem(1) solid cl(line-white);
+      }
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        border-top: none;
+      }
+    }
+    &.vertical {
+      flex: 0 0 25%;
+
+      @media (max-width: $tablet) {
+        flex: 0 0 auto;
+        padding: 0;
+      }
+
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+        border-top: none;
+      }
+
+      .img {
+        padding: 0 0 200%;
+      }
+    }
+  }
+}

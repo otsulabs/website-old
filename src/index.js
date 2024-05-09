@@ -11,7 +11,13 @@ import ProjectsPage from './pages/Projects';
 import CareerDetailsPage from './pages/CareerDetails';
 import ContactPage from './pages/Contact';
 import PrivacyPage from './pages/Privacy';
-import ProjectPage from './pages/Project';
+import ProjectPage from './pages/projectList/ProjectDefault';
+import TheWrathOfGods from './pages/projectList/TheWrathOfGods';
+import SystemRoyalePart1 from './pages/projectList/SystemRoyalePart_1';
+import SystemRoyalePart2 from './pages/projectList/SystemRoyalePart_2';
+import TheDopeShtTypeSlash from './pages/projectList/TheDopeShtTypeSlash';
+import Eris from './pages/projectList/Eris';
+import TheBookOfNouns from './pages/projectList/TheBookOfNouns';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +51,30 @@ const router = createBrowserRouter([
       {
         path: 'projects/item',
         element: <ProjectPage />,
+      },
+      {
+        path: 'projects/the_wrath_of_gods',
+        element: <TheWrathOfGods />,
+      },
+      {
+        path: 'projects/system_royale_art_1',
+        element: <SystemRoyalePart1 />,
+      },
+      {
+        path: 'projects/system_royale_art_2',
+        element: <SystemRoyalePart2 />,
+      },
+      {
+        path: 'projects/the_dope_sht_type_slash',
+        element: <TheDopeShtTypeSlash />,
+      },
+      {
+        path: 'projects/eris',
+        element: <Eris />,
+      },
+      {
+        path: 'projects/the_book_of_nouns',
+        element: <TheBookOfNouns />,
       },
       {
         path: 'contacts',
