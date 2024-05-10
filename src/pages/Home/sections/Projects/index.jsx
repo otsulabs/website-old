@@ -3,14 +3,16 @@ import { Scrollbar, Mousewheel } from 'swiper/modules';
 import Button from '../../../../components/Button';
 import Title from '../../../../components/Title';
 import style from './Projects.module.scss';
-import img from './assets/img/img1.jpg';
-import video from '../../../../files/video/conviction.mp4';
+import video1 from '../../../projectList/TheWrathOfGods/sections/Content/assets/video/video.mp4';
+import video2 from '../../../projectList/Eris/sections/Content/assets/video/video.mp4';
+import video3 from '../../../projectList/TheBookOfNouns/sections/Content/assets/video/video.mp4';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const ProjectsSection = () => {
   return (
@@ -37,13 +39,13 @@ const ProjectsSection = () => {
           // slideActiveClass={style.active}
         >
           <SwiperSlide className={style.projectsSlider__slide}>
-            <VideoCard video={video} title={'Conviction'} />
+            <VideoCard video={video1} title={'The Wrath of Gods'} />
           </SwiperSlide>
           <SwiperSlide className={style.projectsSlider__slide}>
-            <VideoCard video={video} title={'Conviction'} />
+            <VideoCard video={video2} title={'Eris'} />
           </SwiperSlide>
           <SwiperSlide className={style.projectsSlider__slide}>
-            <VideoCard video={video} title={'Conviction'} />
+            <VideoCard video={video3} title={'The Book of nouns'} />
           </SwiperSlide>
         </Swiper>
         <div
@@ -63,8 +65,12 @@ const VideoCard = ({ video, title }) => {
   };
   const pauseVideo = () => {
     videoRef.current.pause();
-    videoRef.current.currentTime = 0;
+    videoRef.current.currentTime = 1;
   };
+
+  useEffect(() => {
+    videoRef.current.currentTime = 1;
+  }, []);
 
   return (
     <Link
