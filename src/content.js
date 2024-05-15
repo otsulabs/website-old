@@ -65,4 +65,17 @@ export const siteContent = {
   contacts: {
     email: 'contact@otsulabs.com',
   },
+  projectsVideo: {
+    theWrathOfGods:
+      'https://player.vimeo.com/progressive_redirect/playback/928704584/rendition/1080p/file.mp4?loc=external&signature=1ed1ddd7e657cbf2c05f7b143c0dd86f091045b4a968a632d1c9975b60a25b85',
+    eris: 'https://player.vimeo.com/progressive_redirect/playback/928702501/rendition/1080p/file.mp4?loc=external&signature=738cc14fa90bf5869bbc038bb709c1996847212972e67ecb315c0eb384914afd',
+    theBookOfNouns:
+      'https://player.vimeo.com/progressive_redirect/playback/945822381/rendition/1080p/file.mp4?loc=external&signature=03a29f61bd27eb4cfdd378fa2b5d29d17750bc3f672d7ddbc87fa9d11971d62e',
+    theDopeShitTypeSlash:
+      'https://player.vimeo.com/progressive_redirect/playback/928702474/rendition/1080p/file.mp4?loc=external&signature=b2374123828f87b5dd4488acea74d2f5b6d9c37d243ee171d3f6f8499ad8f733',
+    systemRPart_1:
+      'https://player.vimeo.com/progressive_redirect/playback/928702422/rendition/720p/file.mp4?loc=external&signature=3122a40732e4fb9ed32ea39646f91943886a9d9ee39b83735e8a008d3b75b572',
+    systemRPart_2:
+      'https://player.vimeo.com/progressive_redirect/playback/928702374/rendition/1080p/file.mp4?loc=external&signature=f4143c3626fdf1578a73354b661e4f24933687e0c306845db43ec079ed72930f',
+  },
 };

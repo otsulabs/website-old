@@ -1,14 +1,16 @@
-import video1 from '../../../projectList/TheWrathOfGods/sections/Content/assets/video/video.mp4';
-import video2 from '../../../projectList/SystemRoyalePart_1/sections/Content/assets/video/video.mp4';
-import video3 from '../../../projectList/SystemRoyalePart_2/sections/Content/assets/video/video.mp4';
-import video4 from '../../../projectList/TheDopeShtTypeSlash/sections/Content/assets/video/video.mp4';
-import video5 from '../../../projectList/Eris/sections/Content/assets/video/video.mp4';
-import video6 from '../../../projectList/TheBookOfNouns/sections/Content/assets/video/video.mp4';
+// import video1 from '../../../projectList/TheWrathOfGods/sections/Content/assets/video/video.mp4';
+// import video2 from '../../../projectList/SystemRoyalePart_1/sections/Content/assets/video/video.mp4';
+// import video3 from '../../../projectList/SystemRoyalePart_2/sections/Content/assets/video/video.mp4';
+// import video4 from '../../../projectList/TheDopeShtTypeSlash/sections/Content/assets/video/video.mp4';
+// import video5 from '../../../projectList/Eris/sections/Content/assets/video/video.mp4';
+// import video6 from '../../../projectList/TheBookOfNouns/sections/Content/assets/video/video.mp4';
+
+import { siteContent } from '../../../../content';
 
 const content = {
   cards: [
     {
-      video: video1,
+      video: siteContent.projectsVideo.theWrathOfGods,
       title: 'The Wrath of Gods',
       user: 'Roolz',
       userType: 'Сlient',
@@ -21,7 +23,7 @@ const content = {
       to: '/projects/the_wrath_of_gods',
     },
     {
-      video: video2,
+      video: siteContent.projectsVideo.systemRPart_1,
       title: 'System Royale - Part 1',
       user: 'Zokio by VoyceMe',
       userType: 'Сlient',
@@ -34,7 +36,7 @@ const content = {
       to: '/projects/system_royale_art_1',
     },
     {
-      video: video3,
+      video: siteContent.projectsVideo.systemRPart_2,
       title: 'System Royale - Part 2',
       user: 'Zokio by VoyceMe',
       userType: 'Сlient',
@@ -47,7 +49,7 @@ const content = {
       to: '/projects/system_royale_art_2',
     },
     {
-      video: video4,
+      video: siteContent.projectsVideo.theDopeShitTypeSlash,
       title: 'The dope sh*t-type slash',
       user: 'Alex Hugh',
       userType: 'Сlient',
@@ -60,7 +62,7 @@ const content = {
       to: '/projects/the_dope_sht_type_slash',
     },
     {
-      video: video5,
+      video: siteContent.projectsVideo.eris,
       title: 'Eris',
       user: 'Conviction',
       userType: 'Сlient',
@@ -73,7 +75,7 @@ const content = {
       to: '/projects/eris',
     },
     {
-      video: video6,
+      video: siteContent.projectsVideo.theBookOfNouns,
       title: 'The Book of Nouns',
       user: '',
       userType: 'In-house',

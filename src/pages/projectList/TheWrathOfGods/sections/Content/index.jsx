@@ -7,7 +7,7 @@ import Gallery from '../../../ProjectDefault/modules/Gallery';
 import Description from '../../../ProjectDefault/modules/Description';
 import Credits from '../../../ProjectDefault/modules/Credits';
 
-import videoSrc from './assets/video/video.mp4';
+// import videoSrc from './assets/video/video.mp4';
 import highlight_img1 from './assets/highlights/img1.jpg';
 import highlight_img2 from './assets/highlights/img2.jpg';
 import highlight_img3 from './assets/highlights/img3.jpg';
@@ -37,6 +37,7 @@ import development_img9 from './assets/development/img9.jpg';
 import development_img10 from './assets/development/img10.jpg';
 import development_img11 from './assets/development/img11.jpg';
 import development_img12 from './assets/development/img12.jpg';
+import { siteContent } from '../../../../../content';
 
 const Content = () => {
   const isTablet = useMediaQuery('(max-width:991.98px)');
@@ -64,7 +65,13 @@ const Content = () => {
           'Character Development and Design, Lore and World-building, Concept art, Background art, Script, Storyboard, Color Script, Full Production, Sound Design, Visual Effects.'
         }
       />
-      <Gallery.Base withSpace horizontal big video items={[videoSrc]} />
+      <Gallery.Base
+        withSpace
+        horizontal
+        big
+        video
+        items={[siteContent.projectsVideo.theWrathOfGods]}
+      />
       <Description title={'highlights'} />
       <Gallery.Base
         horizontal

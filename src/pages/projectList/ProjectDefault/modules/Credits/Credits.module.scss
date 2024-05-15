@@ -25,10 +25,10 @@
       padding: 0;
     }
 
-    &:not(:first-child) {
-      border-left: rem(1) solid cl(line-white);
+    &:first-child {
+      border-right: rem(1) solid cl(line-white);
       @media (max-width: $tablet) {
-        border-left: none;
+        border-right: none;
       }
     }
   }

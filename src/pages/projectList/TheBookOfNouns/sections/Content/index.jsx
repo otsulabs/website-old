@@ -7,7 +7,7 @@ import Gallery from '../../../ProjectDefault/modules/Gallery';
 import Description from '../../../ProjectDefault/modules/Description';
 import Credits from '../../../ProjectDefault/modules/Credits';
 
-import videoSrc from './assets/video/video.mp4';
+// import videoSrc from './assets/video/video.mp4';
 
 import development_img1 from './assets/development/img1.jpg';
 import development_img2 from './assets/development/img2.jpg';
@@ -25,6 +25,7 @@ import development_img13 from './assets/development/img13.jpg';
 import development_img14 from './assets/development/img14.jpg';
 import development_img15 from './assets/development/img15.jpg';
 import development_img16 from './assets/development/img16.jpg';
+import { siteContent } from '../../../../../content';
 
 const Content = () => {
   const isTablet = useMediaQuery('(max-width:991.98px)');
@@ -52,7 +53,13 @@ const Content = () => {
           'Character Design, Storyboard, Color Script, Full Production, Sound Design, Visual Effects.'
         }
       />
-      <Gallery.Base withSpace horizontal big video items={[videoSrc]} />
+      <Gallery.Base
+        withSpace
+        horizontal
+        big
+        video
+        items={[siteContent.projectsVideo.theBookOfNouns]}
+      />
       <Description title={'Development'} />
       <Gallery.Base
         horizontal
