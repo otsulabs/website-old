@@ -9,6 +9,7 @@ import videoWebm from './assets/video/video.webm';
 
 const MainSection = () => {
   const isTablet = useMediaQuery('(max-width:991.98px)');
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
   return (
     <section className={style.main}>
@@ -37,13 +38,13 @@ const MainSection = () => {
           <div className={style.main__person}>
             {/* <img src={personImg} alt='' /> */}
             <video autoplay='autoplay' loop muted playsInline>
-              <source src={videoMp4} type='video/mp4' />
-              <source src={videoWebm} type='video/webm' />
-              {/* {isSafari ? (
+              {/* <source src={videoMp4} type='video/mp4' />
+              <source src={videoWebm} type='video/webm' /> */}
+              {isSafari ? (
                 <source src={videoMp4} type='video/mp4' />
               ) : (
                 <source src={videoWebm} type='video/webm' />
-              )} */}
+              )}
             </video>
           </div>
         </>
@@ -81,8 +82,11 @@ const MainSection = () => {
                 </svg>
               </div>
               <video autoplay='autoplay' loop muted playsInline>
-                <source src={videoMp4} type='video/mp4' />
-                <source src={videoWebm} type='video/webm' />
+                {isSafari ? (
+                  <source src={videoMp4} type='video/mp4' />
+                ) : (
+                  <source src={videoWebm} type='video/webm' />
+                )}
               </video>
               {/* <img src={personImg} alt='' /> */}
             </div>
